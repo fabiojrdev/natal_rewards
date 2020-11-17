@@ -8,12 +8,11 @@ Adicione no vrp_inventory na parte server.lua juntamente a outros items que são
 
 Adicione o seguinte codigo abaixo:
 
-if itemName == "presente" then
+  if itemName == "presente" then
                     active[parseInt(user_id)] = 5
                     vCLIENT.closeInventory(source)
                     vCLIENT.blockButtons(source,true)
                     TriggerClientEvent("progress",source,5000,"desembrulhando")
-
                     repeat
                         if active[parseInt(user_id)] == 0 then
                             active[parseInt(user_id)] = -1
