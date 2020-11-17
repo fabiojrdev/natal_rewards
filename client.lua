@@ -24,6 +24,9 @@ Citizen.CreateThread(function()
 
 		--	local source = source
 		--	local user_id = func.getUserId(source)
+		
+
+		
 		if distance <= 15 then
 			DrawMarker(25,CoordenadaX,CoordenadaY,CoordenadaZ-0.43,0,0,0,0,180.0,130.0,1.0,1.0,1.0,255,0,0,100,1,0,0,1)
 			if distance <= 1.2 then --and not processo then
@@ -32,7 +35,7 @@ Citizen.CreateThread(function()
 					if tempoespera <= 0 then
 					if func.checkPayment() then
 						processo = true
-						tempoespera = 180
+						tempoespera = 1200
 						TriggerEvent('cancelando',true)
 						TriggerEvent("progress",3000,"Pegando Presente!")
 						TriggerEvent("Notify","aviso","Você pegou uma caixinha aguarde <b>"..tempoespera.." segundos, para pegar a caixinha novamente.",5000)
@@ -55,6 +58,8 @@ Citizen.CreateThread(function()
 							end
 								end)
 
+								
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TEMPO DE ESPERA
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -62,6 +67,9 @@ Citizen.CreateThread(function()
 	while true do
 		if tempoespera > 0 then
 			tempoespera = tempoespera - 1
+		end
+		if tempoespera == 0 then
+			tempoespera = 0
 		end
 		Citizen.Wait(1000)
 	end
