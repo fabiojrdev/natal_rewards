@@ -5,6 +5,9 @@ Coloque o script em sua pasta resources
 Depois crie o item Presente
 
 Adicione no vrp_inventory na parte server.lua juntamente a outros items que são utilizaveis.
+Adicione a Variavel "valor" para que você coloque o valor desejado:
+
+local valor = math.random(500,3000)
 
 Adicione o seguinte codigo abaixo:
 
