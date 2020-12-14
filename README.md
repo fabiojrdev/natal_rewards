@@ -21,7 +21,7 @@ Adicione o seguinte codigo abaixo:
 						if active[parseInt(user_id)] == 0 then
 							active[parseInt(user_id)] = -1
 							if vRP.tryGetInventoryItem(user_id,itemName,1) then
-								vRP.giveMoney(source,parseInt(valor))
+								vRP.giveMoney(user_id,parseInt(valor))
 								TriggerClientEvent("Notify",source,"sucesso","Você ganhou "..valor.." reais/dolares na caixinha de presente.", 8000)
 								vCLIENT.blockButtons(source,false)
 							end
